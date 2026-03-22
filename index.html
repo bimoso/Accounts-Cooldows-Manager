@@ -471,8 +471,8 @@
             const now = new Date().getTime();
             
             accounts.forEach(acc => {
-                const timerEl = document.getElementById(\`timer-\${acc.id}\`);
-                const iconEl = document.getElementById(\`icon-\${acc.id}\`);
+                const timerEl = document.getElementById(`timer-${acc.id}`);
+                const iconEl = document.getElementById(`icon-${acc.id}`);
                 
                 if (!timerEl || !iconEl) return;
                 
@@ -488,7 +488,7 @@
                     const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                     const s = Math.floor((distance % (1000 * 60)) / 1000);
                     
-                    timerEl.textContent = \`\${pad(d)}d \${pad(h)}h \${pad(m)}m \${pad(s)}s\`;
+                    timerEl.textContent = `${pad(d)}d ${pad(h)}h ${pad(m)}m ${pad(s)}s`;
                     timerEl.classList.remove('ready');
                     iconEl.innerHTML = '<i class="fa-solid fa-hourglass-half status-wait"></i>';
                 }
