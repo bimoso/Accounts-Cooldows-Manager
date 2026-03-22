@@ -10,17 +10,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-base: #0f172a;
-            --bg-card: #1e293b;
-            --bg-card-hover: #334155;
+            --bg-base: #060b19;
+            --bg-card: #111a2e;
+            --bg-card-hover: #1a2742;
             --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent: #3b82f6;
-            --accent-hover: #2563eb;
+            --text-secondary: #b2c0d8;
+            --accent: #4f8dff;
+            --accent-hover: #3b78ea;
             --danger: #ef4444;
             --danger-hover: #dc2626;
-            --success: #10b981;
-            --border: #334155;
+            --success: #34d399;
+            --border: #2a3b5f;
             --font-main: 'Inter', sans-serif;
             --transition: all 0.3s ease;
         }
@@ -33,7 +33,10 @@
 
         body {
             font-family: var(--font-main);
-            background-color: var(--bg-base);
+            background:
+                radial-gradient(1200px 600px at 20% -10%, rgba(79, 141, 255, 0.18), transparent 60%),
+                radial-gradient(900px 500px at 100% 0%, rgba(14, 165, 233, 0.14), transparent 50%),
+                var(--bg-base);
             color: var(--text-primary);
             min-height: 100vh;
             display: flex;
@@ -106,13 +109,13 @@
             gap: 1rem;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 14px 35px -20px rgba(0, 0, 0, 0.85);
         }
 
         .card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
-            border-color: var(--text-secondary);
+            box-shadow: 0 22px 38px -24px rgba(0, 0, 0, 0.95);
+            border-color: #3b5485;
         }
 
         .card-header {
@@ -137,7 +140,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: rgba(4, 10, 24, 0.65);
             padding: 1rem;
             border-radius: 8px;
         }
@@ -217,7 +220,7 @@
         }
 
         .modal-content {
-            background-color: var(--bg-card);
+            background: linear-gradient(180deg, rgba(20, 31, 54, 0.96) 0%, rgba(14, 24, 44, 0.96) 100%);
             border-radius: 12px;
             width: 90%;
             max-width: 450px;
@@ -273,7 +276,7 @@
         .form-control {
             width: 100%;
             padding: 0.75rem 1rem;
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: rgba(9, 16, 31, 0.9);
             border: 1px solid var(--border);
             border-radius: 8px;
             color: var(--text-primary);
@@ -285,7 +288,18 @@
         .form-control:focus {
             outline: none;
             border-color: var(--accent);
-            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+            box-shadow: 0 0 0 3px rgba(79, 141, 255, 0.2);
+        }
+
+        .form-control[type="number"] {
+            appearance: textfield;
+            -moz-appearance: textfield;
+        }
+
+        .form-control[type="number"]::-webkit-outer-spin-button,
+        .form-control[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
         }
 
         .time-grid {
@@ -302,14 +316,18 @@
         }
 
         .btn-secondary {
-            background-color: transparent;
+            background-color: rgba(12, 20, 36, 0.8);
             border: 1px solid var(--border);
             color: var(--text-primary);
         }
 
         .btn-secondary:hover {
-            background-color: var(--border);
+            background-color: #1b2a48;
             box-shadow: none;
+        }
+
+        .modal-actions .btn[type="submit"] {
+            background: linear-gradient(135deg, #4f8dff 0%, #3b78ea 100%);
         }
         
         /* Empty State */
