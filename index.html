@@ -173,7 +173,7 @@
         
         .countdown.ready {
             color: var(--success);
-            animation: ready-pulse 1.4s ease-in-out infinite;
+            animation: ready-pulse 1.4s ease-in-out 2;
         }
 
         .card-actions {
@@ -269,7 +269,7 @@
 
         .close-modal:hover {
             color: var(--text-primary);
-            transform: rotate(90deg);
+            transform: scale(1.08);
         }
 
         .form-group {
@@ -302,7 +302,7 @@
         }
 
         .form-control[type="number"] {
-            appearance: none;
+            appearance: textfield;
             -moz-appearance: textfield;
         }
 
@@ -358,9 +358,31 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
+            .card {
                 animation: none !important;
-                transition: none !important;
+                animation-duration: 0s !important;
+                transition-duration: 0s !important;
+            }
+
+            .countdown.ready {
+                animation: none !important;
+                animation-duration: 0s !important;
+            }
+
+            .modal-overlay,
+            .modal-content,
+            .btn,
+            .btn-icon,
+            .close-modal,
+            .form-control {
+                transition-duration: 0s !important;
+            }
+
+            .card:hover,
+            .btn:hover,
+            .btn-icon:hover,
+            .close-modal:hover {
+                transform: none !important;
             }
         }
         
